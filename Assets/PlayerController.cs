@@ -92,23 +92,29 @@ public class PlayerController : MonoBehaviour
 
     private void Movement() 
     {
-        if (Input.GetKey(KeyCode.A))
+        float hDirection = Input.GetAxis("Horizontal");
+        if (hDirection < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(-1, 1);
 
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (hDirection > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
 
         }
-        else
+       
+          if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
-            anim.SetBool("running", false);
+            Jump();
         }
-        if (Input.GetKey(KeyCode.W) && coll.IsTouchingLayers(ground))
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             state = State.jumping;

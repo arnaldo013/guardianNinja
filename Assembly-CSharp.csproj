@@ -75,6 +75,7 @@
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\enemy_move.cs" />
     <Compile Include="Assets\nextLevel.cs" />
+    <Compile Include="Assets\nextLevel2.cs" />
     <Compile Include="Assets\sceneChanger.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
